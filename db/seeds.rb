@@ -8,5 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Car.destroy_all
-Car.create!(brand: "ferrari", model:"3000", rental_options: "Daily", features:"Autopilot", start_date: "20/05/2025", end_date:"21/05/2025" )
+User.destroy_all
+user1 = User.create!(email:"fdhh@gmail.com", password: "sdfsdfs", first_name: "Saddam",  last_name:"Hussain")
+Car.create!(brand: "ferrari", model:"3000", rental_options: "Daily", features:"Autopilot", start_date: "20/05/2025", end_date:"21/05/2025", user: user1 )
 puts "#{Car.count}"
