@@ -7,3 +7,6 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Car.destroy_all
+Car.create!(brand: "ferrari", model:"3000", rental_options: "Daily", features:"Autopilot", start_date: "20/05/2025", end_date:"21/05/2025" )
+puts "#{Car.count}"
