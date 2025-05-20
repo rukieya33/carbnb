@@ -1,0 +1,52 @@
+<%# <h2>Reservation Comfirmed</h2>
+<div>
+  <%= @booking.car.user.first_name %>
+  <%# <%= @booking.user.first_name %>
+  <%# <%= @booking.start_date %>
+  <%# <%= @booking.end_date %>
+  <%# <p>Estemated</p> %>
+  <%# <%= @booking.car.rent_price * (@booking.end_date - @booking.start_date) %>
+<%# </div> %>
+
+<div class="container mt-5">
+  <div class="card">
+
+    <div class="card-header bg-success text-white">
+      <h2 class="mb-0">Reservation Confirmed!</h2>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">Booking Details:</h5>
+      <p class="card-text">
+        <strong>Car Owner:</strong> <%= @booking.car.user.first_name %>
+      </p>
+      <p class="card-text">
+        <strong>Renter:</strong> <%= @booking.user.first_name %>
+      </p>
+      <p class="card-text">
+        <strong>Start Date:</strong> <%= @booking.start_date.strftime("%A, %B %d, %Y") if @booking.start_date %>
+      </p>
+      <p class="card-text">
+        <strong>End Date:</strong> <%= @booking.end_date.strftime("%A, %B %d, %Y") if @booking.end_date %>
+      </p>
+
+      <hr>
+
+      <h5 class="card-title">Estimated Price:</h5>
+      <% if @booking.car.rent_price && @booking.start_date && @booking.end_date && (@booking.end_date > @booking.start_date) %>
+        <% duration_days = (@booking.end_date - @booking.start_date).to_i %>
+        <% estimated_total = @booking.car.rent_price * duration_days %>
+        <p class="card-text lead">£ <%= estimated_total %> for <%= duration_days %> day's</p>
+      <% else %>
+        <p class="card-text">Could not calculate estimated price. Please make sure all the pricing and dates values are added in our tables.</p>
+      <% end %>
+    </div>
+
+<br>
+       <div class="card-footer">
+        <div class="d-flex justify-content-between">
+          <%= link_to "Back to Home", root_path, class: "btn btn-outline-primary" %>
+          <%= link_to "View Dashboard", root_path, class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+</div>
