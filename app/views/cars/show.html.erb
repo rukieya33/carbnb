@@ -2,13 +2,13 @@
 <p>Find me in app/views/cars/show.html.erb</p>
 
 <div class="car-details">
-  <!-- Car details would go here -->
+  <!-- Car details  -->
 </div>
 
 <div class="rental-form mt-4">
   <h2>Reservation Confirmed</h2>
 
-  <%= simple_form_for [@car, Rental.new] do |f| %>
+  <%= simple_form_for [@car] do |f| %>
     <%= f.input :pickup_location,
                 label: 'Pickup Location' %>
 
