@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'cars/index'
-  get 'cars/show'
-  get 'cars/new'
-  get 'cars/create'
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,8 +6,11 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :cars, only: [:index, :show, :new, :create]
+  # resources :cars, only: [:index, :show, :new, :create]
 
+  resources :cars do
+    post 'favorite', on: :member
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
