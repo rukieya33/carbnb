@@ -1,2 +1,48 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="vh-100 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+  <div class="text-center mb-4">
+    <h1 class="display-4 fw-bold">Discover the best cars for your journey</h1>
+    <p class="lead">Search by car to find your perfect ride</p>
+  </div>
+
+   <div class="w-100" style="max-width: 500px;">
+    <%= form_with url: cars_path, method: :get, html: { class: "input-group input-group-lg" }, local: true do |f| %>
+      <%= text_field_tag :query, params.dig(:search, :query), class: "form-control", placeholder: "I am looking for a car.." %>
+      <button class="btn btn-primary" type="submit">Search</button>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<div class="container my-5">
+  <h3 class="mb-4">Explore nearby cars</h3>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <% @cars.each do |car| %>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+
+          <div class="card-body">
+            <h5 class="card-title"><%= car.brand %></h5>
+            <p class="card-text text-muted">£<%= car.rent_price %>/day</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h3 class="mb-4">Hosts' favorite cars</h3>
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <% @favorite_cars.each do |car| %>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+
+          <div class="card-body">
+            <h5 class="card-title"><%= car.brand %></h5>
+            <p class="card-text text-muted">£<%= car.rent_price %>/day</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
