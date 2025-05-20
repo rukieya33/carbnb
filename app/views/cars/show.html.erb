@@ -1,2 +1,32 @@
 <h1>Cars#show</h1>
 <p>Find me in app/views/cars/show.html.erb</p>
+
+<div class="car-details">
+  <!-- Car details would go here -->
+</div>
+
+<div class="rental-form mt-4">
+  <h2>Reservation Confirmed</h2>
+
+  <%= simple_form_for [@car, Rental.new] do |f| %>
+    <%= f.input :pickup_location,
+                label: 'Pickup Location' %>
+
+    <%= f.input :pickup_time,
+                as: :datetime,
+                html5: true,
+                label: 'Pickup Time' %>
+
+    <%= f.input :return_time,
+                as: :datetime,
+                html5: true,
+                label: 'Return Time' %>
+
+    <%= f.input :total_price,
+                disabled: true,
+                label: 'Total Price',
+                input_html: { id: 'total_price_field' } %>
+
+    <%= f.button :submit, 'Book Now', class: 'btn btn-primary mt-3' %>
+  <% end %>
+</div>
