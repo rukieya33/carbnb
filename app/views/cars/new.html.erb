@@ -1,2 +1,11 @@
-<h1>Cars#new</h1>
-<p>Find me in app/views/cars/new.html.erb</p>
+<h1>List Your Car</h1>
+<%= simple_form_for @car do |f| %>
+  <%= f.input :brand %>
+  <%= f.input :model %>
+  <%= f.input :rental_options %>
+  <%= f.input :rent_price %>
+  <%= f.input :features %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Submit Car", class: "btn btn-primary" %>
+<% end %>
