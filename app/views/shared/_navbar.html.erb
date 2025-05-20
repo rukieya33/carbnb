@@ -1,11 +1,14 @@
 <nav class="nav my-3">
   <div class="container">
-    <%= image_tag("logo.png") %>
+    <%= link_to cars_path do  %>
+        <%= image_tag("logo.png", class:"logo") %>
+    <% end %>
+
     <li>
       <%= link_to "Rent", cars_path %>
       <%= link_to "List a car", new_car_path %>
       <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-      <%#= link_to "Sign-up", cars_new_path, class:"btn btn-secondary" %>
+      <%= link_to "Sign-up",  new_user_registration_path, class:"btn btn-secondary" %>
     </li>
   </div>
 </nav>
