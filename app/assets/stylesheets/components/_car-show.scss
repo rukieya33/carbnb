@@ -1,0 +1,31 @@
+.content{
+display: flex;
+justify-content: space-between;
+
+span {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+   width: 100%;
+  }
+}
+  .car-show {
+    padding: 1rem;
+  h2{
+    font-size:2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+.booking-form{
+  width: 40%;
+  padding: 1rem;
+
+  .btn{
+    border-radius: 4px;
+  }
+}
+}

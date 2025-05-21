@@ -1,0 +1,26 @@
+<%# car details %>
+<div class="content container w-80 mt-5" >
+  <span>
+    <% if @car.photo.present? %>
+      <%= image_tag(@car.photo) %>
+    <% end %>
+  </span>
+  <div class="container car-show">
+  <h3 class="brand"><%= @car.brand %></h3>
+  <h2 ><%= @car.model %></h2>
+    <p>Price: <%= @car.rent_price %></p>
+  <h3>Features</h3>
+    <p><%= @car.features %></p>
+  <h3>Description</h3>
+  <p><%= @car.description %></p>
+</div>
+
+<%# car reservation form %>
+<div class="container booking-form">
+  <%= simple_form_for [@car, @booking] do |f| %>
+  <%= f.input :start_date%>
+  <%= f.input :end_date%>
+  <%= f.submit "Request to book", class: "btn btn-primary" %>
+  <% end %>
+</div>
+</div>
