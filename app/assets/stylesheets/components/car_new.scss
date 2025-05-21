@@ -1,15 +1,27 @@
 .car-new{
-  display: flex;
-  justify-content: center;
-  background-color: lightblue;
-}
+  background-color: white;
 
-.car-new ul{
-  position: relative;
-  top:700px;
-  right:600px;
+  display: flex;
+  width:500px;
+  margin:0 auto;
 }
 
 body{
+background-color: white;
+}
+
+.car-new input[type="submit"]{
+  width:500px;
+  border-radius: 20px;
+}
+
+.car-new input[type="text"], input[type="number"], input[type="file"], .car-new select{
+  border: 1.5px solid blue;
+  border-radius: 20px;
   background-color: white;
+}
+body h1{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
 }

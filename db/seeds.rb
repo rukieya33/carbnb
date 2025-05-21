@@ -1,6 +1,7 @@
+Booking.destroy_all
 Car.destroy_all
 User.destroy_all
-Booking.destroy_all
+
 
 puts "👤 Creating default user..."
 user = User.find_or_create_by!(email: "host@example.com") do |u|
@@ -88,7 +89,7 @@ Car.create!([
     rental_options: "Daily", description: "Supercar with insane performance.",
     features: "Launch Control, Paddle Shift, V8 Twin Turbo",
     start_date: "2025-06-01", end_date: "2025-06-05",
-    photo: "https://images.unsplash.com/photo-1517142089942-ba376ce32a2e",
+    photo: "https://images.unsplash.com/photo-1618631144258-e7ba302a8afe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGNhciUyMGZlcnJhcml8ZW58MHx8MHx8fDA%3D",
     user: user
   },
   {
@@ -96,7 +97,7 @@ Car.create!([
     rental_options: "Daily, Weekly", description: "Luxury and comfort.",
     features: "Ambient Lighting, Air Suspension",
     start_date: "2025-06-10", end_date: "2025-06-15",
-    photo: "https://images.unsplash.com/photo-1602872027591-58e6c8f66d5e",
+    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9nfe314_US9m4A5k_nObFUyXjIClTf0bKRw&s",
     user: user
   },
   {
@@ -104,7 +105,7 @@ Car.create!([
     rental_options: "Weekend", description: "Rugged SUV built for adventure.",
     features: "Panoramic Roof, AWD",
     start_date: "2025-06-12", end_date: "2025-06-20",
-    photo: "https://images.unsplash.com/photo-1584467537016-71f928fa37dc",
+    photo: "https://images.unsplash.com/photo-1679506640602-0144b3bb5053?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyJTIwcmFuZ2UlMjByb3ZlciUyMHNwb3J0fGVufDB8fDB8fHww",
     user: user
   }
 ])
