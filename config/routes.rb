@@ -9,6 +9,5 @@ Rails.application.routes.draw do
     post 'favorite', on: :member
     resources :bookings, only: [:create]
   end
-
   resources :bookings, only: [:index, :update, :show]
 end
