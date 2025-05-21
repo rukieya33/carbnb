@@ -1,0 +1,38 @@
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+.card-img-bottom {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+}
+.card-img {
+  width: 100%;
+  height: auto;
+}
+.card-img-left {
+  width: 50%;
+  height: auto;
+}
+.card-img-right {
+  width: 50%;
+  height: auto;
+}
+.card-img-top {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
