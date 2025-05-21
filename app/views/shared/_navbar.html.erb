@@ -1,29 +1,40 @@
+
+
 <% if user_signed_in? %>
   <nav class="nav">
     <div class="container">
-      <%= link_to root_path do  %>
-        <%= image_tag("logo.svg", class:"logo") %>
+      <%= link_to root_path do %>
+        <%= image_tag("logo.svg", class: "logo") %>
       <% end %>
-      <li>
-        <%= link_to "Rent", cars_path %>
-        <%= link_to "List a car", new_car_path %>
-        <%= link_to root_path do  %>
-          <%= image_tag("user.svg", class:"logo") %>
-        <% end %>
-      </li>
+      <ul>
+        <li> <%= link_to "Rent", cars_path %> </li>
+        <li><%= link_to "List a car", new_car_path %></li>
+        <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
+              <% link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+          <li>
+            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+          </li>
+      </ul>
     </div>
   </nav>
 <% else %>
-  <nav class="nav">
+  <nav class="nav ">
     <div class="container">
-      <%= link_to root_path do  %>
-        <%= image_tag("logo.svg", class:"logo") %>
+      <%= link_to root_path do %>
+        <%= image_tag("logo.svg", class: "logo") %>
       <% end %>
       <li>
         <%= link_to "Rent", cars_path %>
         <%= link_to "List a car", new_car_path %>
         <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-        <%= link_to "Sign-up",  new_user_registration_path, class:"btn btn-secondary" %>
+        <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-secondary" %>
       </li>
     </div>
   </nav>
