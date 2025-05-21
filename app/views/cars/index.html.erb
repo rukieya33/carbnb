@@ -1,39 +1,38 @@
 <div class="container my-5">
-  <h1 class="mb-4 text-center">Discover the best cars for your journey</h1>
+  <h1 class="text-center mb-4">Discover the best cars for your journey</h1>
+
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @cars.each do |car| %>
-       <h3>Owner: <%= car.user.first_name%> <%= car.user.last_name%></h3>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
+      <div class="col d-flex">
+        <div class="card shadow-sm w-100 d-flex flex-column">
 
-          <!-- Car image -->
-          <%= image_tag "https://via.placeholder.com/400x200?text=Car+Image", class: "card-img-top", alt: "#{car.brand} #{car.model}" %>
+          <!-- Car Image -->
+          <% if car.photo.present? %>
+            <%= image_tag car.photo, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
+          <% end %>
 
-          <!-- Card body -->
+          <!-- Card Body -->
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title"><%= "#{car.brand} #{car.model}" %></h5>
-            <p class="card-text text-muted mb-1"><%= car.description.presence || "No description provided." %></p>
+            <h5 class="card-title"><%= car.brand %> <%= car.model %></h5>
+            <p class="text-muted small"><%= car.description.presence || "No description provided." %></p>
             <p class="fw-bold">£<%= car.rent_price %>/day</p>
 
-            <!-- Action buttons -->
-            <div class="mt-auto d-flex justify-content-between">
-
-              <!-- Book Car button -->
+            <!-- Action Buttons -->
+            <div class="mt-auto d-flex justify-content-between align-items-center">
               <%= link_to car_path(car), class: "btn btn-primary btn-sm" do %>
-                <i class="bi bi-calendar-check me-1"></i> Book Car
+                <i class="bi bi-calendar-check me-1"></i> View Car
               <% end %>
 
-              <!-- Favorite form -->
               <%= form_with url: favorite_car_path(car), method: :post, local: true do %>
                 <%= submit_tag "❤️ Favorite", class: "btn btn-outline-danger btn-sm" %>
               <% end %>
-
             </div>
           </div>
 
           <!-- Footer -->
           <div class="card-footer text-muted text-center small">
-            Listed on <%= car.created_at.strftime("%B %d, %Y") %>
+            Listed on <%= car.created_at.strftime("%B %d, %Y") %><br>
+            Owner: <%= car.user.first_name %> <%= car.user.last_name %>
           </div>
         </div>
       </div>
