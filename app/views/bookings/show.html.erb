@@ -1,6 +1,7 @@
 
-
 <div class="container mt-5">
+  <%= image_tag @booking.car.photo, class: "img-fluid d-block mx-auto my-3" %>
+  <br>
   <div class="card">
 
     <div class="card-header bg-success text-white">
@@ -28,7 +29,7 @@
       <% if @booking.car.rent_price && @booking.start_date && @booking.end_date && (@booking.end_date > @booking.start_date) %>
         <% duration_days = (@booking.end_date - @booking.start_date).to_i %>
         <% estimated_total = @booking.car.rent_price * duration_days %>
-        <p class="card-text lead">£ <%= estimated_total %> for <%= duration_days %> day's</p>
+        <p class="card-text lead">£ <%= estimated_total %> for <%= duration_days %> <%= duration_days == 1 ? 'day' : 'days' %></p>
       <% else %>
         <p class="card-text">Could not calculate estimated price. Please make sure all the pricing and dates values are added in our tables.</p>
       <% end %>
@@ -38,7 +39,7 @@
        <div class="card-footer">
         <div class="d-flex justify-content-between">
           <%= link_to "Back to Home", root_path, class: "btn btn-outline-primary" %>
-          <%= link_to "View Dashboard", root_path, class: "btn btn-outline-secondary" %>
+          <%= link_to "View Dashboard", bookings_path, class: "btn btn-outline-secondary" %>
         </div>
       </div>
   </div>
