@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   end
 
 
+
   def index
     @bookings = current_user.bookings
     @cars = current_user.cars
