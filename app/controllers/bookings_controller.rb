@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.car = @car
 
+
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -19,7 +20,8 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
+    @cars = current_user.cars
   end
 
 
