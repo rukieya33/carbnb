@@ -4,8 +4,8 @@
   <%= f.input :model %>
   <%= f.input :rental_options %>
   <%= f.input :rent_price %>
-  <%= f.input :features %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit "Submit Car", class: "btn btn-primary" %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :features,  as: :check_boxes, collection: [['AWD', 1], ['Convertible', 2],
+  ['Bluetooth', 3], ['Heated seats', 4]] %>
+  <%= f.submit "List your Car", class: "btn btn-primary" %>
 <% end %>
