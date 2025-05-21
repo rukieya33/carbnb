@@ -11,11 +11,9 @@
     <div class="card-body">
       <h5 class="card-title">Booking Details:</h5>
       <p class="card-text">
-        <strong>Car Owner:</strong> <%= @booking.car.user.first_name %>
+        <strong>Renter:</strong> <%= @booking.car.user.first_name %> <%= @booking.user.last_name %>
       </p>
-      <p class="card-text">
-        <strong>Renter:</strong> <%= @booking.user.first_name %>
-      </p>
+
       <p class="card-text">
         <strong>Start Date:</strong> <%= @booking.start_date.strftime("%A, %B %d, %Y") if @booking.start_date %>
       </p>
