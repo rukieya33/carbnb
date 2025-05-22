@@ -26,7 +26,7 @@ class CarsController < ApplicationController
   def favorite
   @car = Car.find(params[:id])
   redirect_to cars_path, notice: 'Car was successfully added to favorites.'
-end
+  end
 
   private
 
