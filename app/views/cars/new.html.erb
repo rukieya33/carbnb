@@ -1,13 +1,21 @@
 <h1>List Your Car</h1>
 <div class="car-new">
   <%= simple_form_for  @car do |f| %>
+    <div class="main-details" >
     <%= f.input :brand %>
     <%= f.input :model %>
     <%= f.input :rental_options %>
     <%= f.input :rent_price %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :features, collection:["AWD", "Convertible", "Bluetooth", "Heated Seats"], prompt: "Select a feature" %>
-
-    <%= f.submit "List your Car", class: "btn btn-primary" %>
+    <%= f.input :description%>
+    </div>
+    <div class="other-details">
+      <%= f.input :features, collection:["AWD", "Convertible", "Bluetooth", "Heated Seats"], prompt: "Select a feature" %>
+      <%= f.input :transmission %>
+      <%= f.input :fuel %>
+      <%= f.input :model_year %>
+      <%= f.input :seat_capacity %>
+       <%= f.submit "List your Car", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
