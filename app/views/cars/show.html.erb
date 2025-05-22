@@ -6,12 +6,18 @@
     <% end %>
   </span>
   <div class="container car-show">
-  <h3 class="brand"><%= @car.brand %></h3>
+  <h3 class="brand"><strong><%= @car.brand %></strong></h3>
   <h2 ><%= @car.model %></h2>
-    <p>Price: <%= @car.rent_price %></p>
-  <h3>Features</h3>
+  <ul>
+    <li>Transmission: <%= @car.transmission %></li>
+    <li>Fuel Type: <%= @car.fuel %></li>
+    <li>Year: <%= @car.model_year %></li>
+    <li>Seat Capacity: <%= @car.seat_capacity %></li>
+  </ul>
+    <p style="text-decoration: underline;">Price: £<%=@car.rent_price %></p>
+  <h3><strong>Features</strong></h3>
     <p><%= @car.features %></p>
-  <h3>Description</h3>
+  <h3><strong>Description</strong></h3>
   <p><%= @car.description %></p>
 </div>
 
