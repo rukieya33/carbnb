@@ -1,23 +1,42 @@
-.content{
-display: flex;
-justify-content: space-between;
-align-items: center;
-span {
-  width: 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img{
-   width: 100%;
+.content {
+  .title{
+    text-align: center;
+    h3 {
+      font-size: 1rem;
+    }
+    h2{
+      font-size: 1.5rem ;
+    }
+  }
+  .image-gallary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gallary {
+    width: 60%;
   }
 }
-  .car-show {
-    padding: 1rem;
-  h2{
-    font-size:2rem;
-  }
-  h3 {
-    font-size: 1.5rem;
+
+.car-show{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  .details {
+    width: 80%;
+    margin: 1rem auto;
+
+    h3{
+      text-align: center;
+    }
+
+    .details-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
   }
 }
 .booking-form{
@@ -27,5 +46,4 @@ span {
   .btn{
     border-radius: 4px;
   }
-}
 }
