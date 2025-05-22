@@ -1,3 +1,4 @@
+
 Booking.destroy_all
 Car.destroy_all
 User.destroy_all
@@ -21,7 +22,7 @@ Car.create!([
     features: "Autopilot, Sunroof, Bluetooth",
     start_date: "2025-06-01",
     end_date: "2025-06-10",
-    photo: "https://images.unsplash.com/photo-1652509407751-be84db9a7bca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhciUyMHRlc2xhJTIwTW9kZWwlMjBTfGVufDB8fDB8fHww",
+    photo_url: "https://images.unsplash.com/photo-1652509407751-be84db9a7bca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhciUyMHRlc2xhJTIwTW9kZWwlMjBTfGVufDB8fDB8fHww",
     user: user
   },
   {
@@ -33,7 +34,7 @@ Car.create!([
     features: "Air Conditioning, USB Charger, Cruise Control",
     start_date: "2025-06-05",
     end_date: "2025-06-12",
-    photo: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGNhciUyMHRveW90YSUyMGNvcm9sbGF8ZW58MHx8MHx8fDA%3D",
+    photo_url: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGNhciUyMHRveW90YSUyMGNvcm9sbGF8ZW58MHx8MHx8fDA%3D",
     user: user
   },
   {
@@ -45,7 +46,7 @@ Car.create!([
     features: "Leather Seats, Navigation, All-Wheel Drive",
     start_date: "2025-06-15",
     end_date: "2025-06-25",
-    photo: "https://images.unsplash.com/photo-1674996047492-6b5cdc2dcf0a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGNhciUyMEJNVyUyMFg1fGVufDB8fDB8fHww",
+    photo_url: "https://images.unsplash.com/photo-1674996047492-6b5cdc2dcf0a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGNhciUyMEJNVyUyMFg1fGVufDB8fDB8fHww",
     user: user
   },
   {
@@ -57,7 +58,7 @@ Car.create!([
     features: "V8 Engine, Sport Mode, Convertible",
     start_date: "2025-06-10",
     end_date: "2025-06-14",
-    photo: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEyfHxjYXIlMjBmb3JkJTIwbXVzdGFuZyUyMHJlZHxlbnwwfHwwfHx8MA%3D%3D",
+    photo_url: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEyfHxjYXIlMjBmb3JkJTIwbXVzdGFuZyUyMHJlZHxlbnwwfHwwfHx8MA%3D%3D",
     user: user
   },
   {
@@ -69,7 +70,7 @@ Car.create!([
     features: "Bluetooth, Backup Camera, Lane Assist",
     start_date: "2025-06-01",
     end_date: "2025-06-08",
-    photo: "https://images.unsplash.com/photo-1686074449582-6374eaebacf3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGNhciUyMGhvbmRhJTIwY2l2aWN8ZW58MHx8MHx8fDA%3D",
+    photo_url: "https://images.unsplash.com/photo-1686074449582-6374eaebacf3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGNhciUyMGhvbmRhJTIwY2l2aWN8ZW58MHx8MHx8fDA%3D",
     user: user
   },
   {
@@ -81,7 +82,7 @@ Car.create!([
     features: "Third Row Seating, Rear Entertainment, Tow Package",
     start_date: "2025-06-20",
     end_date: "2025-07-01",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7giDUWLmQnzmInwMohiKgajA-I5pGtI8ZOA&s",
+    photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7giDUWLmQnzmInwMohiKgajA-I5pGtI8ZOA&s",
     user: user
   },
   {
@@ -89,7 +90,7 @@ Car.create!([
     rental_options: "Daily", description: "Supercar with insane performance.",
     features: "Launch Control, Paddle Shift, V8 Twin Turbo",
     start_date: "2025-06-01", end_date: "2025-06-05",
-    photo: "https://images.unsplash.com/photo-1618631144258-e7ba302a8afe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGNhciUyMGZlcnJhcml8ZW58MHx8MHx8fDA%3D",
+    photo_url: "https://images.unsplash.com/photo-1618631144258-e7ba302a8afe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGNhciUyMGZlcnJhcml8ZW58MHx8MHx8fDA%3D",
     user: user
   },
   {
@@ -97,7 +98,7 @@ Car.create!([
     rental_options: "Daily, Weekly", description: "Luxury and comfort.",
     features: "Ambient Lighting, Air Suspension",
     start_date: "2025-06-10", end_date: "2025-06-15",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9nfe314_US9m4A5k_nObFUyXjIClTf0bKRw&s",
+    photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9nfe314_US9m4A5k_nObFUyXjIClTf0bKRw&s",
     user: user
   },
   {
@@ -105,16 +106,12 @@ Car.create!([
     rental_options: "Weekend", description: "Rugged SUV built for adventure.",
     features: "Panoramic Roof, AWD",
     start_date: "2025-06-12", end_date: "2025-06-20",
-    photo: "https://images.unsplash.com/photo-1679506640602-0144b3bb5053?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyJTIwcmFuZ2UlMjByb3ZlciUyMHNwb3J0fGVufDB8fDB8fHww",
+    photo_url: "https://images.unsplash.com/photo-1679506640602-0144b3bb5053?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyJTIwcmFuZ2UlMjByb3ZlciUyMHNwb3J0fGVufDB8fDB8fHww",
     user: user
   }
 ])
 
 puts "📅 Creating bookings..."
-
-# Booking.create!(user: user, car: ferrari, start_date: "2025-05-25", end_date: "2025-05-27")
-# Booking.create!(user: user, car: mercedes, start_date: "2025-05-26", end_date: "2025-05-28")
-# Booking.create!(user: user, car: range_rover, start_date: "2025-05-28", end_date: "2025-05-29")
 
 Booking.create!(
   user: user,
