@@ -31,6 +31,6 @@ end
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo, :start_date, :end_date)
+    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo, :transmission, :fuel, :model_year, :seat_capacity)
   end
 end
