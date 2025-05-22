@@ -1,16 +1,12 @@
-.car-new{
+.car-new {
   background-color: white;
-  width:500px;
+  width:700px;
   margin:0 auto;
+  text-align: center;
+  right:150px;
 }
-.car-new .other-details{
-  position: relative;
-  left: 400px;
-  bottom:540px;
-}
-.car-new .main-details{
-  position: relative;
-  right:300px;
+.row{
+  margin:20px;
 }
 body{
 background-color: white;
@@ -21,13 +17,113 @@ background-color: white;
   height:50px;
   border-radius: 20px;
   margin-top:30px;
+  position:relative;
+  bottom:30px;
+  font-size:20px;
 }
 
-.car-new input[type="text"], input[type="number"], input[type="file"], .car-new select{
+.car-new .row input[type="text"], input[type="number"], input[type="file"], .car-new select{
   border: 1.5px solid blue;
   border-radius: 20px;
   background-color: white;
+  width:300px;
+  position:relative;
+  right:300px;
 }
+#car_brand, #car_model{
+  width:600px;
+}
+#car_model{
+  position: relative;
+  left: 300px;
+  width:630px;
+}
+
+label[for="car_brand"], label[for="car_seat_capacity"], label[for="car_fuel"]{
+   position: relative;
+  right: 300px;
+}
+label[for="car_model"]{
+  position: relative;
+  left: 300px;
+}
+ #car_photo,label[for="car_photo"]{
+  position: relative;
+  left:450px;
+ }
+ label[for="car_photo"]{
+   position: relative;
+   top:26px;
+ }
+ #car_photo{
+  position:relative;
+  top:26px;
+  width:370px;
+ }
+ #car_features{
+  position:relative;
+  left:5px;
+ }
+ #car_transmission{
+  position: relative;
+  left:350px;
+  width:360px;
+ }
+ label[for="car_transmission"]{
+  position: relative;
+  left:370px;
+ }
+ #car_model_year{
+  position: relative;
+  left:100px;
+  top:10px;
+  width:400px;
+ }
+ #car_fuel{
+  width:400px;
+ }
+ label[for="car_model_year"]{
+  position: relative;
+  left: 100px;
+  bottom:5px;
+ }
+ #car_description{
+  position: relative;
+  left:470px;
+  bottom:10px;
+ }
+ label[for="car_description"]{
+  position: relative;
+  left:600px;
+ }
+ #car_description{
+  width: 350px;
+ }
+ #car_features{
+  position:relative;
+  top:7px;
+  width:370px;
+  right:100px;
+ }
+
+ #car_rental_options, #car_rent_price, #car_seat_capacity, #car_features{
+  width:400px;
+ }
+  #car_rent_price{
+  position: relative;
+  left:100px;
+  top:23px;
+ }
+ label[for="car_rent_price"]{
+   position: relative;
+   left:100px;
+   top:5px;
+ }
+
+ label[for="car_rental_options"]{
+  position: relative;
+  right:300px;
+ }
 body h1{
   margin-bottom: 30px;
   margin-top: 30px;
