@@ -1,41 +1,59 @@
 <div class="container mt-5">
 
- <h1>Booking Dashboard</h1>
+ <h1><strong>My Dashboard</strong></h1>
  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">My Booking</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">My Listing</button>
-  </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-    <% @bookings.each do |booking| %>
-    <%= link_to booking_path(booking) do %>
-      <%= image_tag(booking.car.photo) %>
-        <br>
-      <%= booking.car.brand %> | <%=booking.car.model %>
-        <br>
-      <%= booking.start_date %> - <%= booking.end_date %>
-      <br>
-      <p><%= booking.car.rent_price %></p>
-      <hr>
-    <% end %>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">My Booking</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">My Listing</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+      <% @bookings.each do |booking| %>
+      <%= link_to booking_path(booking) do %>
+      <div class="car-info">
+        <div class="car-details">
+          <div class="image">
+            <%= image_tag(booking.car.photo) %>
+          </div>
+          <div class="heading">
+            <div>
+              <h3><%= booking.car.brand %> | <%=booking.car.model %></h3>
+              <p><%= booking.car.transmission %></p>
+              <p>Booked between | <%= booking.start_date %> - <%= booking.end_date %></p>
+            </div>
+            <div class="rent">
+              <p>Rent £<% duration_days = (booking.end_date - booking.start_date).to_i %>
+        <% estimated_total = booking.car.rent_price * duration_days %> <%=estimated_total %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
 
-  <% end %>
+    <% end %>
 
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-  <% @cars.each do |car| %>
-    <%= image_tag(car.photo) %>
-        <br>
-      <%= car.brand %> | <%=car.model %>
-      <br>
-      <p><%=car.rent_price %></p>
-      <hr>
-  <% end %>
+    <% @cars.each do |car| %>
+      <div class="car-info">
+        <div class="car-details">
+          <div class="image">
+            <%= image_tag(car.photo) %>
+          </div>
+          <div class="heading">
+          <div>
+              <h3><%= car.brand %> | <%= car.model %></h3>
+              <p><%= car.transmission %></p>
+              <p><%= car.fuel %></p>
+            </div>
+            <div class="rent">
+              <p>£<%= car.rent_price %>/day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-
-</div>

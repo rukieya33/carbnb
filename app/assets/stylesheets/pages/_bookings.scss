@@ -1,0 +1,48 @@
+.nav-link {
+  color: black;
+  font-weight: bolder;
+  font-size: 18px;
+}
+.car-info {
+  background: whitesmoke;
+  height: auto;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  .car-details {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  img {
+    width: 180px;
+    height: 150px;
+    border-radius: 5%;
+    object-fit: cover;
+  }
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 32px;
+    color: black;
+    h3 {
+      font-weight: bolder;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: large;
+    }
+  }
+  .rent {
+    position:absolute;
+    right: 30px;
+    bottom: 20px;
+    font-weight: bolder;
+
+  }
+}
+a {
+  text-decoration: none;
+}
