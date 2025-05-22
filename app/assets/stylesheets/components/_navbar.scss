@@ -6,13 +6,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      margin: 0;
+    }
   }
   .logo{
     width: 100%;
   }
 
+
   .avatar{
-    width: 15%;
+    width: auto;
   }
   li a {
     text-decoration: none;
