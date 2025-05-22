@@ -7,8 +7,10 @@
         <div class="card shadow-sm w-100 d-flex flex-column">
 
           <!-- Car Image -->
-          <% if car.photo.present? %>
-            <%= image_tag car.photo, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
+          <% if car.photo_url.present? %>
+            <%= image_tag car.photo_url, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
+            <% elsif car.photo.attached? %>
+            <%= cl_image_tag car.photo.key, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
           <% end %>
 
           <!-- Card Body -->

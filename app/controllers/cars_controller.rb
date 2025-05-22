@@ -29,11 +29,11 @@ class CarsController < ApplicationController
   def favorite
   @car = Car.find(params[:id])
   redirect_to cars_path, notice: 'Car was successfully added to favorites.'
-end
+  end
 
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo, :transmission, :fuel, :model_year, :seat_capacity)
+    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo_url, :transmission, :fuel, :model_year, :seat_capacity)
   end
 end

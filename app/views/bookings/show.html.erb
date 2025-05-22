@@ -1,56 +1,139 @@
-
-<div class="container mt-5">
-  <%= image_tag @booking.car.photo, class: "img-fluid d-block mx-auto my-3" %>
-  <br>
-  <div class="card">
-
-    <div class="card-header bg-success text-white">
-      <h2 class="mb-0">Reservation Confirmed!</h2>
-    </div>
-
-    <div class="card-body">
-      <h5 class="card-title">Booking Details:</h5>
-      <p class="card-text">
-        <strong>Renter:</strong> <%= @booking.car.user.first_name %> <%= @booking.user.last_name %>
-      </p>
-
-      <p class="card-text">
-        <strong>Start Date:</strong> <%= @booking.start_date.strftime("%A, %B %d, %Y") if @booking.start_date %>
-      </p>
-      <p class="card-text">
-        <strong>End Date:</strong> <%= @booking.end_date.strftime("%A, %B %d, %Y") if @booking.end_date %>
-      </p>
-
-      <hr>
-
-      <h5 class="card-title">Estimated Price:</h5>
-      <% if @booking.car.rent_price && @booking.start_date && @booking.end_date && (@booking.end_date > @booking.start_date) %>
-        <% duration_days = (@booking.end_date - @booking.start_date).to_i %>
-        <% estimated_total = @booking.car.rent_price * duration_days %>
-        <p class="card-text lead">£ <%= estimated_total %> for <%= duration_days %> <%= duration_days == 1 ? 'day' : 'days' %></p>
-      <% else %>
-        <p class="card-text">Could not calculate estimated price. Please make sure all the pricing and dates values are added in our tables.</p>
-      <% end %>
-    </div>
-
-<br>
-       <div class="card-footer">
-        <div class="d-flex justify-content-between">
-          <%= link_to "Back to Home", root_path, class: "btn btn-outline-primary" %>
-          <%= link_to "View Dashboard", bookings_path, class: "btn btn-outline-secondary" %>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <!-- Car Image with Overlay -->
+      <div class="position-relative mb-4">
+        <%= image_tag @booking.car.photo_url, class: "img-fluid rounded-lg w-100", style: "max-height: 400px; object-fit: cover;" %>
+        <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+          <h2 class="text-white mb-0"><%= @booking.car.brand %> <%= @booking.car.model %></h2>
+          <p class="text-white-50 mb-0"><%= @booking.car.model_year if @booking.car.respond_to?(:model_year) %></p>
         </div>
       </div>
+
+      <!-- Confirmation Card -->
+      <div class="card shadow-sm border-0 rounded-3 mb-4">
+        <div class="card-header bg-success bg-gradient text-white py-3">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-check-circle-fill me-2" style="font-size: 1.5rem;"></i>
+            <h4 class="mb-0">Reservation Confirmed!</h4>
+          </div>
+        </div>
+
+        <div class="card-body p-4">
+          <!-- Booking ID Section -->
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="text-muted mb-0">Booking Reference</h5>
+            <span class="badge bg-dark px-3 py-2 rounded-pill">#<%= @booking.id %></span>
+          </div>
+
+          <!-- Details Section -->
+          <div class="booking-details mb-4">
+            <div class="row mb-3">
+              <div class="col-sm-4">
+                <p class="text-muted mb-1">Car</p>
+                <p class="fw-bold mb-0"><%= @booking.car.brand %> <%= @booking.car.model %></p>
+              </div>
+              <div class="col-sm-4">
+                <p class="text-muted mb-1">Renter Name</p>
+                <p class="fw-bold mb-0"><%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+              </div>
+              <div class="col-sm-4">
+                <p class="text-muted mb-1">Duration</p>
+                <% if @booking.start_date && @booking.end_date %>
+                  <% duration_days = (@booking.end_date - @booking.start_date).to_i %>
+                  <p class="fw-bold mb-0"><%= duration_days %> <%= duration_days == 1 ? 'day' : 'days' %></p>
+                <% else %>
+                  <p class="fw-bold mb-0">N/A</p>
+                <% end %>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Section -->
+          <div class="booking-timeline mb-4">
+            <div class="d-flex position-relative pb-4 mb-3" style="border-left: 2px dashed #dee2e6; margin-left: 12px;">
+              <div class="position-absolute" style="left: -12px; top: 0;">
+                <div class="bg-success rounded-circle d-flex justify-content-center align-items-center" style="width: 24px; height: 24px;">
+                  <i class="bi bi-calendar-check-fill text-white small"></i>
+                </div>
+              </div>
+              <div class="ms-4">
+                <p class="text-muted mb-1">Start Date</p>
+                <p class="fw-bold mb-0"><%= @booking.start_date.strftime("%A, %B %d, %Y") if @booking.start_date %></p>
+              </div>
+            </div>
+            <div class="d-flex position-relative">
+              <div class="position-absolute" style="left: -12px; top: 0;">
+                <div class="bg-danger rounded-circle d-flex justify-content-center align-items-center" style="width: 24px; height: 24px;">
+                  <i class="bi bi-calendar-x-fill text-white small"></i>
+                </div>
+              </div>
+              <div class="ms-4">
+                <p class="text-muted mb-1">End Date</p>
+                <p class="fw-bold mb-0"><%= @booking.end_date.strftime("%A, %B %d, %Y") if @booking.end_date %></p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- Price Section -->
+          <div class="price-section">
+            <h5 class="mb-3">Payment Details</h5>
+            <% if @booking.car.rent_price && @booking.start_date && @booking.end_date && (@booking.end_date > @booking.start_date) %>
+              <% duration_days = (@booking.end_date - @booking.start_date).to_i %>
+              <% estimated_total = @booking.car.rent_price * duration_days %>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Daily rate</span>
+                <span>£<%= @booking.car.rent_price %></span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Duration</span>
+                <span><%= duration_days %> <%= duration_days == 1 ? 'day' : 'days' %></span>
+              </div>
+              <div class="d-flex justify-content-between pt-3 mt-3 border-top">
+                <span class="fw-bold">Total amount</span>
+                <span class="fw-bold fs-5">£<%= estimated_total %></span>
+              </div>
+            <% else %>
+              <div class="alert alert-warning">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Could not calculate estimated price. Please make sure all pricing and dates are correctly set.
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Car Features Section -->
+      <% if @booking.car.respond_to?(:features) && @booking.car.features.present? %>
+        <div class="card border-0 shadow-sm rounded-3">
+          <div class="card-body p-4">
+            <h5 class="card-title mb-3">Car Features</h5>
+            <div class="row">
+              <% @booking.car.features.split(',').each do |feature| %>
+                <div class="col-md-4 mb-2">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-check2-circle text-success me-2"></i>
+                    <span><%= feature.strip %></span>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <!-- buttons  -->
+      <div class="mt-4 d-flex flex-column gap-2">
+        <%= link_to root_path, class: "btn text-center py-3 rounded-4", style: "background-color: #F0F3F7; color: #000; text-decoration: none; font-weight: 500;" do %>
+          Return to homepage
+        <% end %>
+
+        <%= link_to bookings_path, class: "btn text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500;" do %>
+          View your dashboard
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-
-
-<%# <h2>Reservation Comfirmed</h2>
-<div>
-  <%= @booking.car.user.first_name %>
-  <%# <%= @booking.user.first_name %>
-  <%# <%= @booking.start_date %>
-  <%# <%= @booking.end_date %>
-  <%# <p>Estemated</p> %>
-  <%# <%= @booking.car.rent_price * (@booking.end_date - @booking.start_date) %>
-<%# </div> %>

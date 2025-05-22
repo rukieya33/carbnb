@@ -1,0 +1,25 @@
+.footer {
+  border-top: 1px solid #e8edf2;
+  margin-top: 3rem;
+}
+
+.footer .social-icons a {
+  font-size: 1.3rem;
+  transition: color 0.3s;
+  text-decoration: none; // Add this line to remove underlines
+}
+
+.footer .social-icons a:hover {
+  color: #1a80e5 !important;
+  text-decoration: none; // Add this line to ensure no underlines on hover
+}
+
+.footer-links a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #1a80e5 !important;
+  text-decoration: underline;
+}

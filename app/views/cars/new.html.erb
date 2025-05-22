@@ -1,21 +1,27 @@
 <h1>List Your Car</h1>
 <div class="car-new">
   <%= simple_form_for  @car do |f| %>
-    <div class="main-details" >
-    <%= f.input :brand %>
-    <%= f.input :model %>
-    <%= f.input :rental_options %>
-    <%= f.input :rent_price %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :description%>
-    </div>
-    <div class="other-details">
-      <%= f.input :features, collection:["AWD", "Convertible", "Bluetooth", "Heated Seats"], prompt: "Select a feature" %>
-      <%= f.input :transmission %>
-      <%= f.input :fuel %>
-      <%= f.input :model_year %>
-      <%= f.input :seat_capacity %>
+  <div class="row">
+    <div class="col-1"><%= f.input :brand %></div>
+    <div class="col-2"><%= f.input :model %></div>
+  </div>
+  <div class="row">
+    <div class="col-1"><%= f.input :rental_options, collection:["Daily", "Weekly", "Monthly"], prompt: "Select a rental option" %></div>
+    <div class="col-2"><%= f.input :rent_price %></div>
+    <div class="col-3"><%= f.input :photo_url, as: :file, input_html: { multiple: true } %></div>
+  </div>
+  <div class="row">
+    <div class="col-3"><%= f.input :seat_capacity %></div>
+    <div class="col-2"><%= f.input :features, collection:["AWD", "Convertible", "Bluetooth", "Heated Seats"], prompt: "Select a feature" %></div>
+    <div class="col-3"><%= f.input :transmission %></div>
+  </div>
+  <div class="row">
+      <div class="col-1"><%= f.input :fuel %></div>
+      <div class="col-2"><%= f.input :model_year %></div>
+      <div class="col-1"><%= f.input :description%></div>
+
+  </div>
        <%= f.submit "List your Car", class: "btn btn-primary" %>
-    </div>
+
   <% end %>
 </div>

@@ -1,0 +1,63 @@
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container text-center">
+    <div class="social-icons mb-3">
+      <%= link_to "https://twitter.com", target: "_blank", class: "mx-2 text-dark" do %>
+        <i class="bi bi-twitter"></i>
+      <% end %>
+      <%= link_to "https://facebook.com", target: "_blank", class: "mx-2 text-dark" do %>
+        <i class="bi bi-facebook"></i>
+      <% end %>
+      <%= link_to "https://instagram.com", target: "_blank", class: "mx-2 text-dark" do %>
+        <i class="bi bi-instagram"></i>
+      <% end %>
+    </div>
+
+    <p class="mb-1">© 2025 Carbnb | All rights reserved.</p>
+    <p class="mb-2">Made with <span class="text-danger">❤</span> at Le-wagon</p>
+
+  <div class="footer-links">
+      <!-- Terms of Service Modal Triger -->
+      <a href="#" class="text-muted mx-3" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a>
+      <!-- Policy Policy Modal Triger -->
+      <a href="#" class="text-muted mx-3" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Terms of Service Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Don't mess with Carbnb development team 🤣</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Why did the Privacy Policy join a gym?
+          <br>
+          Because it wanted to get in shape — Too many users were skipping over it without even a glance! 💪</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

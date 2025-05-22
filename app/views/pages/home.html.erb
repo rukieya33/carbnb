@@ -18,8 +18,10 @@
     <% @cars.each do |car| %>
       <div class="col d-flex">
         <div class="card shadow-sm w-100 d-flex flex-column">
-          <% if car.photo.present? %>
-            <%= image_tag car.photo, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
+          <% if car.photo_url.present? %>
+            <%= image_tag car.photo_url, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
+            <% elsif car.photo.attached? %>
+            <%= cl_image_tag car.photo.key, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
           <% end %>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"><%= car.brand %> <%= car.model %></h5>
@@ -38,8 +40,10 @@
     <% @favorite_cars.each do |car| %>
       <div class="col d-flex">
         <div class="card shadow-sm w-100 d-flex flex-column">
-          <% if car.photo.present? %>
-            <%= image_tag car.photo, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
+          <% if car.photo_url.present? %>
+            <%= image_tag car.photo_url, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
+            <% elsif car.photo.attached? %>
+            <%= cl_image_tag car.photo.key, class: "card-img-top object-fit-cover", alt: "#{car.brand} #{car.model}", style: "height: 200px;" %>
           <% end %>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"><%= car.brand %> <%= car.model %></h5>

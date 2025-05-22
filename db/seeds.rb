@@ -1,3 +1,4 @@
+
 Booking.destroy_all
 Car.destroy_all
 User.destroy_all
@@ -25,12 +26,15 @@ Car.create!([
 
     With constant over-the-air updates, the Model S continues to improve even after purchase, adding new features and enhancing performance. Combining speed, efficiency, and cutting-edge tech, the Tesla Model S stands as a symbol of the EV revolution and a compelling choice for drivers seeking innovation without compromise.",
     features: "Autopilot, Sunroof, Bluetooth",
-    photo: "https://images.unsplash.com/photo-1652509407751-be84db9a7bca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhciUyMHRlc2xhJTIwTW9kZWwlMjBTfGVufDB8fDB8fHww",
+
+
+    photo_url: "https://images.unsplash.com/photo-1652509407751-be84db9a7bca?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhciUyMHRlc2xhJTIwTW9kZWwlMjBTfGVufDB8fDB8fHww",
     user: user,
     transmission: "Automatic",
     model_year: 2024,
     fuel: "Electric",
     seat_capacity: 5
+
   },
   {
     brand: "Toyota",
@@ -42,12 +46,15 @@ Car.create!([
     A Toyota car is an ideal choice for those who prioritize dependability and low ownership costs without sacrificing comfort or style. Whether you're navigating busy city streets, embarking on long road trips, or simply commuting daily, Toyota’s finely tuned engines and intuitive driving dynamics provide a smooth, responsive experience. Many models come equipped with Toyota’s advanced safety features,
     including Toyota Safety Sense™—a suite of driver-assistance technologies designed to protect you and your passengers.",
     features: "Air Conditioning, USB Charger, Cruise Control",
-    photo: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGNhciUyMHRveW90YSUyMGNvcm9sbGF8ZW58MHx8MHx8fDA%3D",
+
+
+    photo_url: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGNhciUyMHRveW90YSUyMGNvcm9sbGF8ZW58MHx8MHx8fDA%3D",
     user: user,
     transmission: "Automatic",
     model_year: 2024,
     fuel: "Petrol",
     seat_capacity: 5
+
   },
   {
     brand: "BMW",
@@ -58,12 +65,15 @@ Car.create!([
     rent_price: 110.0,
     description: "Spacious luxury SUV with great performance and comfort.",
     features: "Leather Seats, Navigation, All-Wheel Drive",
-    photo: "https://images.unsplash.com/photo-1674996047492-6b5cdc2dcf0a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGNhciUyMEJNVyUyMFg1fGVufDB8fDB8fHww",
+
+
+    photo_url: "https://images.unsplash.com/photo-1674996047492-6b5cdc2dcf0a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fGNhciUyMEJNVyUyMFg1fGVufDB8fDB8fHww",
     user: user,
     transmission: "Automatic",
     model_year: 2025,
     fuel: "Petrol",
     seat_capacity: 5
+
   },
   {
     brand: "Ford",
@@ -74,12 +84,15 @@ Car.create!([
 
     Inside a Ford vehicle, comfort meets functionality. The interiors are thoughtfully designed, offering intuitive controls, spacious seating, and high-quality materials. Many models come equipped with the latest infotainment systems, including SYNC technology for seamless smartphone integration, voice commands, and real-time navigation. Safety is also a top priority, with features such as lane-keeping assist, adaptive cruise control, and automated emergency braking standard or available across most models.",
     features: "V8 Engine, Sport Mode, Convertible",
-    photo: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEyfHxjYXIlMjBmb3JkJTIwbXVzdGFuZyUyMHJlZHxlbnwwfHwwfHx8MA%3D%3D",
+
+
+    photo_url: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTEyfHxjYXIlMjBmb3JkJTIwbXVzdGFuZyUyMHJlZHxlbnwwfHwwfHx8MA%3D%3D",
     user: user,
     transmission: "Automatic",
     model_year: 2024,
     fuel: "Petrol",
     seat_capacity: 5
+
   },
   {
     brand: "Honda",
@@ -90,12 +103,15 @@ Car.create!([
 
     One of the standout features of a Honda is its fuel efficiency. With advanced engine technologies like the Earth Dreams system and hybrid options, Honda delivers excellent mileage without sacrificing driving enjoyment. The smooth handling and responsive steering make every journey — whether a city commute or a long highway drive — feel confident and controlled.",
     features: "Bluetooth, Backup Camera, Lane Assist",
-    photo: "https://images.unsplash.com/photo-1686074449582-6374eaebacf3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGNhciUyMGhvbmRhJTIwY2l2aWN8ZW58MHx8MHx8fDA%3D",
+
+
+    photo_url: "https://images.unsplash.com/photo-1686074449582-6374eaebacf3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGNhciUyMGhvbmRhJTIwY2l2aWN8ZW58MHx8MHx8fDA%3D",
     user: user,
     transmission: "Automatic",
     model_year: 2024,
     fuel: "Diesel",
     seat_capacity: 5
+
   },
   {
     brand: "Chevrolet",
@@ -106,12 +122,14 @@ Car.create!([
 
     One of the standout features of Chevrolet cars is their balance of power and efficiency. With options like fuel-efficient turbocharged engines, electric models such as the Chevrolet Bolt EV, and high-performance variants like the Camaro or Corvette, Chevrolet caters to a wide spectrum of drivers. Interiors are thoughtfully designed with user-friendly infotainment systems, quality materials, and ample space, ensuring a comfortable ride for all passengers.",
     features: "Third Row Seating, Rear Entertainment, Tow Package",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7giDUWLmQnzmInwMohiKgajA-I5pGtI8ZOA&s",
+
+    photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7giDUWLmQnzmInwMohiKgajA-I5pGtI8ZOA&s",
     user: user,
     transmission: "Automatic",
     model_year: 2024,
     fuel: "Diesel",
     seat_capacity: 5
+
   },
   {
     brand: "Ferrari", model: "488 Spider", rent_price: 300.0,
@@ -119,12 +137,14 @@ Car.create!([
 
     At the heart of every Ferrari is a finely tuned engine, often a V8 or V12, delivering incredible horsepower and acceleration that thrills driving enthusiasts. The company’s commitment to innovation is evident in its use of advanced materials like carbon fiber, sophisticated electronics, and precision engineering to optimize performance and handling. Whether on the racetrack or the open road, Ferrari vehicles offer unparalleled responsiveness and agility.",
     features: "Launch Control, Paddle Shift, V8 Twin Turbo",
-    photo: "https://images.unsplash.com/photo-1618631144258-e7ba302a8afe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGNhciUyMGZlcnJhcml8ZW58MHx8MHx8fDA%3D",
+
+    photo_url: "https://images.unsplash.com/photo-1618631144258-e7ba302a8afe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGNhciUyMGZlcnJhcml8ZW58MHx8MHx8fDA%3D",
     user: user,
     transmission: "Manual",
     model_year: 2024,
     fuel: "Petrol",
     seat_capacity: 2
+
   },
   {
     brand: "Mercedes-Benz", model: "S-Class", rent_price: 180.0,
@@ -132,12 +152,13 @@ Car.create!([
 
     The lineup ranges from elegant sedans like the C-Class and E-Class, to powerful SUVs such as the GLE and GLS, to high-performance models under the AMG badge. Each Mercedes-Benz car boasts meticulously crafted interiors with premium materials, intuitive infotainment systems, and advanced driver assistance technologies, ensuring a superior driving experience.",
     features: "Ambient Lighting, Air Suspension",
-    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9nfe314_US9m4A5k_nObFUyXjIClTf0bKRw&s",
+    photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9nfe314_US9m4A5k_nObFUyXjIClTf0bKRw&s",
     user: user,
     transmission: "Automatic",
     model_year: 2024,
     fuel: "Petrol",
     seat_capacity: 5
+
   },
   {
     brand: "Range Rover", model: "Sport", rent_price: 220.0,
@@ -145,20 +166,18 @@ Car.create!([
 
     Under the hood, the Range Rover is powered by a range of robust engines, including efficient turbocharged gasoline and diesel options, as well as electrified variants, delivering impressive performance on- and off-road. Its advanced Terrain Response system allows the vehicle to adapt effortlessly to various driving conditions — from city streets to rugged terrains — maintaining optimal traction and control.",
     features: "Panoramic Roof, AWD",
-    photo: "https://images.unsplash.com/photo-1679506640602-0144b3bb5053?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyJTIwcmFuZ2UlMjByb3ZlciUyMHNwb3J0fGVufDB8fDB8fHww",
+
+    photo_url: "https://images.unsplash.com/photo-1679506640602-0144b3bb5053?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2FyJTIwcmFuZ2UlMjByb3ZlciUyMHNwb3J0fGVufDB8fDB8fHww",
     user: user,
     transmission: "Automatic",
     model_year: 2024,
     fuel: "Petrol",
     seat_capacity: 7
+
   }
 ])
 
 puts "📅 Creating bookings..."
-
-# Booking.create!(user: user, car: ferrari, start_date: "2025-05-25", end_date: "2025-05-27")
-# Booking.create!(user: user, car: mercedes, start_date: "2025-05-26", end_date: "2025-05-28")
-# Booking.create!(user: user, car: range_rover, start_date: "2025-05-28", end_date: "2025-05-29")
 
 Booking.create!(
   user: user,
