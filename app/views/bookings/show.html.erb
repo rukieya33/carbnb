@@ -3,7 +3,7 @@
     <div class="col-lg-8 mx-auto">
       <!-- Car Image with Overlay -->
       <div class="position-relative mb-4">
-        <%= image_tag @booking.car.photo, class: "img-fluid rounded-lg w-100", style: "max-height: 400px; object-fit: cover;" %>
+        <%= image_tag @booking.car.photo_url, class: "img-fluid rounded-lg w-100", style: "max-height: 400px; object-fit: cover;" %>
         <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
           <h2 class="text-white mb-0"><%= @booking.car.brand %> <%= @booking.car.model %></h2>
           <p class="text-white-50 mb-0"><%= @booking.car.model_year if @booking.car.respond_to?(:model_year) %></p>
