@@ -212,13 +212,13 @@ Booking.create!(
 # p review
 # puts "Finished creating review"
 
-puts "Creating reviews..."
-Car.all.each do |car|
-  review = Review.create!(
-    car: car,
-    user: user,
-    content: "This #{car.brand} #{car.model} was amazing! Would definitely rent again.",
-    rating: rand(4..5)
-  )
-end
-puts "Created #{Review.count} reviews"
+# puts "Creating reviews..."
+# Car.all.each do |car|
+#   review = Review.create!(
+#     car: car,
+#     user: user,
+#     content: "This #{car.brand} #{car.model} was amazing! Would definitely rent again.",
+#     rating: rand(4..5)
+#   )
+# end
+# puts "Created #{Review.count} reviews"

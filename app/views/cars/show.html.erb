@@ -74,11 +74,12 @@
 
   </div>
    <%# Reviews Section %>
-      <div class="container mt-5 pt-3 border-top w-100 d-block">
-        <h3>Number of Reviews: <%= @car.reviews.count %></h3>
+      <div class="container mt-5 py-5 border-top w-100 d-block">
+        <h3>Reviews: <%= @car.reviews.count %></h3>
         <% if @reviews.present? %>
           <% @reviews.each do |review| %>
             <p><%= review.content %></p>
+            <p><%= '⭐️' * review.rating  %></p>
           <% end %>
         <% else %>
           <p>No reviews yet.</p>

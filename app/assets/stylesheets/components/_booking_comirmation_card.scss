@@ -6,3 +6,10 @@
   .object-fit-cover {
     object-fit: cover;
   }
+
+  .form-styling-reviews {
+  input[type="number"] {
+    width: 100% !important;
+    right: unset !important;
+}
+  }
