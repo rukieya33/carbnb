@@ -18,7 +18,7 @@
           <div>
             <% if booking.car.photo_url.present? %>
               <%= image_tag(booking.car.photo_url) %>
-            <% elsif car.photo.attached? %>
+            <% elsif booking.car.photo.attached? %>
               <%= cl_image_tag booking.car.photo.key %>
             <% end %>
           </div>
