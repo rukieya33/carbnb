@@ -1,8 +1,30 @@
 <%# car details %>
 <div class="content container w-80 mt-5" >
-  <div class="title">
-    <h3 class="brand"><%= @car.brand %></h3>
-    <h2 ><%= @car.model_year %> <%= @car.model %></h2>
+      <%# Reviews Section %>
+      <div class="container mt-5 pt-3 border-top w-100 d-block">
+        <h3>Number of Reviews: <%= @car.reviews.count %></h3>
+        <% if @reviews.present? %>
+          <% @reviews.each do |review| %>
+            <p><%= review.content %></p>
+          <% end %>
+        <% else %>
+          <p>No reviews yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+    <div class="title">
+      <h3 class="brand"><%= @car.brand %></h3>
+      <h2 ><%= @car.model_year %> <%= @car.model %></h2>
+    </div>
+
+  <div class="image-gallary">
+    <% if @car.photo_url.present? %>
+      <%= image_tag(@car.photo_url, class:"gallary") %>
+    <% end %>
+
   </div>
   <div class="hero-sec">
     <div class="image-wrapper">
@@ -62,6 +84,7 @@
       </div>
     </div>
   </div>
+
   <%# car reservation form %>
   <h2>Ready to ride?</h2>
   <div class="container booking-form" data-contoller= "flatpickr" data-flatpickr-disabled-dates-value="<%= @dates_booked.to_json %>">
@@ -70,6 +93,7 @@
       <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, placeholder: "Select end date" }%>
       <%= f.submit "Book now", class: "btn btn-primary btn-book" %>
     <% end %>
+
   </div>
 </div>
 
