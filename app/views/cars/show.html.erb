@@ -65,10 +65,10 @@
 
   <%# car reservation form %>
   <h2>Ready to ride?</h2>
-  <div class="container booking-form" data-contoller= "flatpickr" data-flatpickr-disabled-dates-value="<%= @dates_booked.to_json %>">
+  <div class="container booking-form">
     <%= simple_form_for [@car, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, placeholder: "Select start date", input_html: { data: { flatpickr_target: "startDate"}} %>
-      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, placeholder: "Select end date" }%>
+      <%= f.input :start_date, as: :string, placeholder: "Select start date", input_html: { data: { controller: "flatpickr", flatpickr_disabled_dates_value: "#{@dates_booked.to_json}"}} %>
+      <%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr", flatpickr_disabled_dates_value: "#{@dates_booked.to_json}"}}, placeholder: "Select end date" %>
       <%= f.submit "Book now", class: "btn btn-primary btn-book" %>
     <% end %>
 
