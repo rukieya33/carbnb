@@ -10,7 +10,10 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @booking = Booking.new
     @reviews = @car.reviews
-    @dates_booked = @car.bookings.map {|booking| [booking.start_date, booking.end_date] }
+    @dates_booked = @car.bookings.map {|booking| { from: booking.start_date, to: booking.end_date } }
+    @dates_booked << {from: "2025-01-01", to: Date.yesterday.strftime("%Y-%m-%d") }
+
+
   end
 
   def new
