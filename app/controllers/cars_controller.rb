@@ -11,7 +11,6 @@ class CarsController < ApplicationController
     @booking = Booking.new
     @reviews = @car.reviews
     @dates_booked = @car.bookings.map {|booking| [booking.start_date, booking.end_date] }
-
   end
 
   def new
@@ -22,7 +21,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user = current_user
     if @car.save
-      redirect_to car_path(@car)
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
