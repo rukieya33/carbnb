@@ -136,7 +136,7 @@
           Return to homepage
         <% end %>
 
-        <%= link_to bookings_path, class: "btn text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500;" do %>
+        <%= link_to bookings_path, class: "btn button-fancy-gradient text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500;" do %>
           View your dashboard
         <% end %>
         <div class = "form-styling-reviews bg-white card shadow-sm rounded-3 mt-5 p-4" >
@@ -144,7 +144,7 @@
           <%= simple_form_for [@booking.car, @review] do |f| %>
             <%= f.input :content %>
             <%= f.input :rating %>
-            <%= f.submit "Submit review", class: "btn text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500; width: 100%" %>
+            <%= f.submit "Submit review", class: "btn button-fancy-gradient text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500; width: 100%" %>
           <% end %>
         </div>
       </div>
