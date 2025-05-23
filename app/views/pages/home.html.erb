@@ -6,7 +6,7 @@
 
   <div class="w-100" style="max-width: 500px;">
     <%= form_with url: cars_path, method: :get, html: { class: "input-group input-group-lg" }, local: true do |f| %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "I am looking for a car..." %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "I am looking for..." %>
       <button class="btn btn-primary" type="submit">Search</button>
     <% end %>
   </div>
@@ -21,11 +21,11 @@
 
       <% if car.photo_url.present? %>
         <%= link_to car_path(car) do %>
-          <%= image_tag car.photo_url, class: "card-img-top rounded-top", style: "height: 200px; width: 100%; object-fit: cover;" %>
+          <%= image_tag car.photo_url, class: "card-img-top rounded-top-4", style: "height: 200px; width: 100%; object-fit: cover;" %>
         <% end %>
       <% elsif car.photo.attached? %>
         <%= link_to car_path(car) do %>
-          <%= cl_image_tag car.photo.key, class: "card-img-top rounded-top", style: "height: 200px; width: 100%; object-fit: cover;" %>
+          <%= cl_image_tag car.photo.key, class: "card-img-top rounded-top-4", style: "height: 200px; width: 100%; object-fit: cover;" %>
         <% end %>
       <% end %>
 
