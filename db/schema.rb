@@ -63,11 +63,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_22_162502) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo_url"
     t.string "transmission"
     t.string "fuel"
     t.integer "seat_capacity"
     t.integer "model_year"
+    t.string "photo_url"
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
