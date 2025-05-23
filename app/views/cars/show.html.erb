@@ -1,5 +1,6 @@
 <%# car details %>
 <div class="content container w-80 mt-5" >
+  
   <div class="row">
     <%# Left Column: Car Details %>
     <div class="col-md-7">
@@ -45,3 +46,72 @@
   </div>
 
 </div>
+    <div class="title">
+      <h3 class="brand"><%= @car.brand %></h3>
+      <h2 ><%= @car.model_year %> <%= @car.model %></h2>
+    </div>
+
+  <div class="image-gallary">
+    <% if @car.photo_url.present? %>
+      <%= image_tag(@car.photo_url, class:"gallary") %>
+    <% end %>
+  </div>
+  <div class="car-show">
+    <div class="price">
+      <p>Price: <%= @car.rent_price %></p>
+    </div>
+    <div class="details">
+      <h3>Details</h3>
+      <div class="details-info">
+        <p><%= @car.model %></p>
+        <p><%= @car.model_year %></p>
+      </div>
+      <div class="details-info">
+        <p><%= @car.transmission %></p>
+        <p><%= @car.fuel %></p>
+      </div>
+      <div class="details-info">
+        <p><%= @car.seat_capacity %></p>
+      </div>
+    </div>
+    <div class="features">
+      <h3>Features</h3>
+      <p><%= @car.features %></p>
+    </div>
+    <div class="description">
+      <h3>Description</h3>
+    <p><%= @car.description %></p>
+    </div>
+  </div>
+
+  <%# car reservation form %>
+  <div class="container booking-form" data-contoller= "flatpickr" data-flatpickr-disabled-dates-value="<%= @dates_booked.to_json %>">
+    <%= simple_form_for [@car, @booking] do |f| %>
+      <%= f.input :start_date, as: :string, placeholder: "Select start date", input_html: { data: { flatpickr_target: "startDate"}} %>
+      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, placeholder: "Select end date" }%>
+      <%= f.submit "Book now", class: "btn btn-primary" %>
+    <% end %>
+
+  </span>
+  <div class="container car-show">
+  <h3 class="brand"><strong><%= @car.brand %></strong></h3>
+  <h2 ><%= @car.model %></h2>
+  <ul>
+    <li>Transmission: <%= @car.transmission %></li>
+    <li>Fuel Type: <%= @car.fuel %></li>
+    <li>Year: <%= @car.model_year %></li>
+    <li>Seat Capacity: <%= @car.seat_capacity %></li>
+  </ul>
+    <p style="text-decoration: underline;">Price: £<%=@car.rent_price %></p>
+  <h3><strong>Features</strong></h3>
+    <p><%= @car.features %></p>
+  <h3><strong>Description</strong></h3>
+  <p><%= @car.description %></p>
+  </div>
+  
+  
+<%# if car is booked for specific dates  %>
+
+  <%# then disable the flatpicker dates for same dates %>
+<%#end %>
+

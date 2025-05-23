@@ -1,5 +1,7 @@
 class CarsController < ApplicationController
-  before_action :authenticate_user!
+
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @cars = Car.all
   end
@@ -8,6 +10,8 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @booking = Booking.new
     @reviews = @car.reviews
+    @dates_booked = @car.bookings.map {|booking| [booking.start_date, booking.end_date] }
+
   end
 
   def new
@@ -32,6 +36,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo, :transmission, :fuel, :model_year, :seat_capacity)
+    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo_url, :transmission, :fuel, :model_year, :seat_capacity)
   end
 end
