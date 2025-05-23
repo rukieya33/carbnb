@@ -200,3 +200,25 @@ Booking.create!(
   start_date: "2025-05-28",
   end_date: "2025-05-30"
 )
+
+
+# puts "Creating reviews..."
+
+# review = Review.new(car: Car.all.sample, user: User.all.sample)
+# review.content = "Fantastic car! Smooth ride and very clean. The owner was super friendly and helpful. Would definitely rent again."
+# review.rating = 5
+# review.save
+
+# p review
+# puts "Finished creating review"
+
+puts "Creating reviews..."
+Car.all.each do |car|
+  review = Review.create!(
+    car: car,
+    user: user,
+    content: "This #{car.brand} #{car.model} was amazing! Would definitely rent again.",
+    rating: rand(4..5)
+  )
+end
+puts "Created #{Review.count} reviews"

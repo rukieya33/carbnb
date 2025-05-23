@@ -1,5 +1,51 @@
 <%# car details %>
 <div class="content container w-80 mt-5" >
+  
+  <div class="row">
+    <%# Left Column: Car Details %>
+    <div class="col-md-7">
+      <span>
+        <% if @car.photo.present? %>
+          <%= image_tag(@car.photo) %>
+        <% end %>
+      </span>
+      <div class="container car-show">
+        <h3 class="brand"><%= @car.brand %></h3>
+        <h2 ><%= @car.model %></h2>
+        <p>Price: <%= @car.rent_price %></p>
+        <h3>Features</h3>
+        <p><%= @car.features %></p>
+        <h3>Description</h3>
+        <p><%= @car.description %></p>
+      </div>
+    </div>
+
+    <%# Right Column: Booking Form and Reviews %>
+    <div class="col-md-5">
+      <%# car reservation form %>
+      <div class="container booking-form my-5 p-4 bg-light rounded w-100 d-block">
+        <%= simple_form_for [@car, @booking] do |f| %>
+          <%= f.input :start_date%>
+          <%= f.input :end_date%>
+          <%= f.submit "Request to book", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+
+      <%# Reviews Section %>
+      <div class="container mt-5 pt-3 border-top w-100 d-block">
+        <h3>Number of Reviews: <%= @car.reviews.count %></h3>
+        <% if @reviews.present? %>
+          <% @reviews.each do |review| %>
+            <p><%= review.content %></p>
+          <% end %>
+        <% else %>
+          <p>No reviews yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
     <div class="title">
       <h3 class="brand"><%= @car.brand %></h3>
       <h2 ><%= @car.model_year %> <%= @car.model %></h2>
@@ -37,6 +83,7 @@
     <p><%= @car.description %></p>
     </div>
   </div>
+
   <%# car reservation form %>
   <div class="container booking-form" data-contoller= "flatpickr" data-flatpickr-disabled-dates-value="<%= @dates_booked.to_json %>">
     <%= simple_form_for [@car, @booking] do |f| %>
@@ -67,3 +114,4 @@
 
   <%# then disable the flatpicker dates for same dates %>
 <%#end %>
+
