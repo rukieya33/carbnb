@@ -3,7 +3,13 @@
     <div class="col-lg-8 mx-auto">
       <!-- Car Image with Overlay -->
       <div class="position-relative mb-4">
-        <%= image_tag @booking.car.photo_url, class: "img-fluid rounded-lg w-100", style: "max-height: 400px; object-fit: cover;" %>
+         <% if @booking.car.photo_url.present? %>
+             <%= image_tag @booking.car.photo_url, class: "img-fluid rounded-lg w-100", style: "max-height: 400px; object-fit: cover;" %>
+            <% elsif @booking.car.photo.attached? %>
+            <%= cl_image_tag @booking.car.photo.key, class: "card-img-top rounded-top-4", alt: "#{@booking.car.brand} #{@booking.car.model}", style: "height: 200px; object-fit: cover;" %>
+          <% end %>
+
+
         <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
           <h2 class="text-white mb-0"><%= @booking.car.brand %> <%= @booking.car.model %></h2>
           <p class="text-white-50 mb-0"><%= @booking.car.model_year if @booking.car.respond_to?(:model_year) %></p>
@@ -130,7 +136,7 @@
           Return to homepage
         <% end %>
 
-        <%= link_to bookings_path, class: "btn text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500;" do %>
+        <%= link_to bookings_path, class: "btn button-fancy-gradient text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500;" do %>
           View your dashboard
         <% end %>
         <div class = "form-styling-reviews bg-white card shadow-sm rounded-3 mt-5 p-4" >
@@ -138,7 +144,7 @@
           <%= simple_form_for [@booking.car, @review] do |f| %>
             <%= f.input :content %>
             <%= f.input :rating %>
-            <%= f.submit "Submit review", class: "btn text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500; width: 100%" %>
+            <%= f.submit "Submit review", class: "btn button-fancy-gradient text-center py-3 rounded-4", style: "background-color:rgb(177, 181, 185); color: white; text-decoration: none; font-weight: 500; width: 100%" %>
           <% end %>
         </div>
       </div>
