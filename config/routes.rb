@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :show, :new, :create] do
     post 'favorite', on: :member
     resources :bookings, only: [:create]
+    resources :reviews, only: [:create]
   end
   resources :bookings, only: [:index, :update, :show]
 end
