@@ -8,6 +8,8 @@
     <div class="image-wrapper">
       <% if @car.photo_url.present? %>
         <%= image_tag(@car.photo_url, class:"image") %>
+      <% elsif @car.photo.attached? %>
+        <%= cl_image_tag @car.photo.key, class:"image" %>
       <% end %>
     </div>
     <div class="hero-details">
