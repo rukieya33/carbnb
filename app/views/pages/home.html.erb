@@ -7,7 +7,7 @@
   <div class="w-100" style="max-width: 500px;">
     <%= form_with url: cars_path, method: :get, html: { class: "input-group input-group-lg" }, local: true do |f| %>
       <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "I am looking for..." %>
-      <button class="btn btn-primary" type="submit">Search</button>
+      <button class="btn button-fancy-gradient" type="submit">Search</button>
     <% end %>
   </div>
 </div>
@@ -47,9 +47,13 @@
       <div class="col d-flex">
         <div class="card shadow-sm w-100 d-flex flex-column rounded-4 overflow-hidden">
           <% if car.photo_url.present? %>
+          <%= link_to car_path(car) do %>
             <%= image_tag car.photo_url, class: "card-img-top rounded-top-4", alt: "#{car.brand} #{car.model}", style: "height: 200px; object-fit: cover;" %>
+          <% end %>
             <% elsif car.photo.attached? %>
+            <%= link_to car_path(car) do %>
             <%= cl_image_tag car.photo.key, class: "card-img-top rounded-top-4", alt: "#{car.brand} #{car.model}", style: "height: 200px; object-fit: cover;" %>
+          <% end %>
           <% end %>
           <div class="card-body d-flex flex-column">
             <h5 class="card-title"><%= car.brand %> <%= car.model %></h5>
