@@ -8,6 +8,8 @@
     <div class="image-wrapper">
       <% if @car.photo_url.present? %>
         <%= image_tag(@car.photo_url, class:"image") %>
+      <% elsif @car.photo.attached? %>
+        <%= cl_image_tag @car.photo.key, class:"image" %>
       <% end %>
     </div>
     <div class="hero-details">
@@ -68,18 +70,19 @@
   <h2>Ready to ride?</h2>
   <div class="container booking-form">
     <%= simple_form_for [@car, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, placeholder: "Select start date", input_html: { data: { controller: "flatpickr", flatpickr_disabled_dates_value: "#{@dates_booked.to_json}"}} %>
-      <%= f.input :end_date, as: :string, input_html: { data: { controller: "flatpickr", flatpickr_disabled_dates_value: "#{@dates_booked.to_json}"}}, placeholder: "Select end date" %>
-      <%= f.submit "Book now", class: "btn btn-primary btn-book" %>
+      <%= f.input :start_date, as: :string, placeholder: "Select start date", input_html: { data: { flatpickr_target: "startDate"}} %>
+      <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, placeholder: "Select end date" }%>
+      <%= f.submit "Book now", class: "btn button-fancy-gradient btn-book" %>
     <% end %>
 
   </div>
    <%# Reviews Section %>
-      <div class="container mt-5 pt-3 border-top w-100 d-block">
-        <h3>Number of Reviews: <%= @car.reviews.count %></h3>
+      <div class="container mt-5 py-5 border-top w-100 d-block">
+        <h3>Reviews: <%= @car.reviews.count %></h3>
         <% if @reviews.present? %>
           <% @reviews.each do |review| %>
             <p><%= review.content %></p>
+            <p><%= '⭐️' * review.rating  %></p>
           <% end %>
         <% else %>
           <p>No reviews yet.</p>

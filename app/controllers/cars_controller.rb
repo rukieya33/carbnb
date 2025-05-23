@@ -12,6 +12,8 @@ class CarsController < ApplicationController
     @reviews = @car.reviews
     @dates_booked = @car.bookings.map {|booking| { from: booking.start_date, to: booking.end_date } }
     @dates_booked << {from: "2025-01-01", to: Date.yesterday.strftime("%Y-%m-%d") }
+
+
   end
 
   def new
@@ -36,6 +38,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo_url, :transmission, :fuel, :model_year, :seat_capacity)
+    params.require(:car).permit(:brand, :model, :rental_options, :rent_price, :description, :features, :photo, :transmission, :fuel, :model_year, :seat_capacity)
   end
 end

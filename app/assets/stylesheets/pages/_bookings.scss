@@ -17,17 +17,19 @@
 
   }
   img {
-    width: 180px;
-    height: 150px;
+    width: 220px;
+    height: 180px;
     border-radius: 5%;
     object-fit: cover;
   }
-  .heading {
+  .headings {
     display: flex;
     justify-content: space-between;
-    padding: 16px 32px;
+    padding: 4px 0px;
+    margin-left: 16px;
+    margin-top: 16px;
     color: black;
-    h3 {
+    .brand {
       font-weight: bolder;
       margin-bottom: 0;
     }

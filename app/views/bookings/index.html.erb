@@ -15,18 +15,22 @@
       <%= link_to booking_path(booking) do %>
       <div class="car-info">
         <div class="car-details">
-          <div class="image">
-            <%= image_tag(booking.car.photo_url) %>
+          <div>
+            <% if booking.car.photo_url.present? %>
+              <%= image_tag(booking.car.photo_url) %>
+            <% elsif booking.car.photo.attached? %>
+              <%= cl_image_tag booking.car.photo.key %>
+            <% end %>
           </div>
-          <div class="heading">
+          <div class="headings">
             <div>
-              <h3><%= booking.car.brand %> | <%=booking.car.model %></h3>
+              <h3 class="brand"><%= booking.car.brand %> <%=booking.car.model %></h3>
               <p><%= booking.car.transmission %></p>
-              <p>Booked between | <%= booking.start_date %> - <%= booking.end_date %></p>
+              <p>Booked between |  <%= booking.start_date %> - <%= booking.end_date %></p>
             </div>
             <div class="rent">
               <p>Rent £<% duration_days = (booking.end_date - booking.start_date).to_i %>
-        <% estimated_total = booking.car.rent_price * duration_days %> <%=estimated_total %></p>
+              <% estimated_total = booking.car.rent_price * duration_days %> <%=estimated_total %></p>
             </div>
           </div>
         </div>
@@ -40,12 +44,16 @@
     <% @cars.each do |car| %>
       <div class="car-info">
         <div class="car-details">
-          <div class="image">
-            <%= image_tag(car.photo_url) %>
-          </div>
-          <div class="heading">
           <div>
-              <h3><%= car.brand %> | <%= car.model %></h3>
+            <% if car.photo_url.present? %>
+              <%= image_tag(car.photo_url) %>
+            <% elsif car.photo.attached? %>
+              <%= cl_image_tag car.photo.key %>
+            <% end %>
+          </div>
+          <div class="headings">
+          <div>
+              <h3 class="brand"><%= car.brand %> | <%= car.model %></h3>
               <p><%= car.transmission %></p>
               <p><%= car.fuel %></p>
             </div>

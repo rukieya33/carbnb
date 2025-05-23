@@ -3,7 +3,7 @@
   width:700px;
   margin:0 auto;
   text-align: center;
-  right:150px;
+  right:100px;
 }
 .row{
   margin:20px;
@@ -47,15 +47,15 @@ label[for="car_model"]{
   position: relative;
   left: 300px;
 }
- #car_photo_url,label[for="car_photo_url"]{
+ #car_photo,label[for="car_photo"]{
   position: relative;
   left:450px;
  }
- label[for="car_photo_url"]{
+ label[for="car_photo"]{
    position: relative;
    top:26px;
  }
- #car_photo_url{
+ #car_photo{
   position:relative;
   top:26px;
   width:370px;
