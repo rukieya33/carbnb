@@ -1,6 +1,6 @@
 <h1>List Your Car</h1>
 <div class="car-new">
-  <%= simple_form_for  @car do |f| %>
+  <%= simple_form_for @car do |f| %>
   <div class="row">
     <div class="col-1"><%= f.input :brand %></div>
     <div class="col-2"><%= f.input :model %></div>
@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-1"><%= f.input :rental_options, collection:["Daily", "Weekly", "Monthly"], prompt: "Select a rental option" %></div>
     <div class="col-2"><%= f.input :rent_price %></div>
-    <div class="col-3"><%= f.input :photo_url, as: :file, input_html: { multiple: true } %></div>
+    <div class="col-3"><%= f.input :photo, as: :file%></div>
   </div>
   <div class="row">
     <div class="col-3"><%= f.input :seat_capacity %></div>
