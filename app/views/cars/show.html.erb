@@ -44,12 +44,25 @@
       <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, placeholder: "Select end date" }%>
       <%= f.submit "Book now", class: "btn btn-primary" %>
     <% end %>
+
+  </span>
+  <div class="container car-show">
+  <h3 class="brand"><strong><%= @car.brand %></strong></h3>
+  <h2 ><%= @car.model %></h2>
+  <ul>
+    <li>Transmission: <%= @car.transmission %></li>
+    <li>Fuel Type: <%= @car.fuel %></li>
+    <li>Year: <%= @car.model_year %></li>
+    <li>Seat Capacity: <%= @car.seat_capacity %></li>
+  </ul>
+    <p style="text-decoration: underline;">Price: £<%=@car.rent_price %></p>
+  <h3><strong>Features</strong></h3>
+    <p><%= @car.features %></p>
+  <h3><strong>Description</strong></h3>
+  <p><%= @car.description %></p>
   </div>
-</div>
-
-
-
-
+  
+  
 <%# if car is booked for specific dates  %>
 
   <%# then disable the flatpicker dates for same dates %>
