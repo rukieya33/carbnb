@@ -1,5 +1,9 @@
 <%# car details %>
 <div class="content container w-80 mt-5" >
+
+  <div class="title">
+    <h3 class="brand"><%= @car.brand %></h3>
+    <h2 ><%= @car.model_year %> <%= @car.model %></h2>
   
   <div class="row">
     <%# Left Column: Car Details %>
@@ -55,42 +59,79 @@
     <% if @car.photo_url.present? %>
       <%= image_tag(@car.photo_url, class:"gallary") %>
     <% end %>
+
   </div>
-  <div class="car-show">
-    <div class="price">
-      <p>Price: <%= @car.rent_price %></p>
+  <div class="hero-sec">
+    <div class="image-wrapper">
+      <% if @car.photo_url.present? %>
+        <%= image_tag(@car.photo_url, class:"image") %>
+      <% end %>
     </div>
-    <div class="details">
-      <h3>Details</h3>
-      <div class="details-info">
-        <p><%= @car.model %></p>
-        <p><%= @car.model_year %></p>
-      </div>
-      <div class="details-info">
-        <p><%= @car.transmission %></p>
-        <p><%= @car.fuel %></p>
-      </div>
-      <div class="details-info">
-        <p><%= @car.seat_capacity %></p>
+    <div class="hero-details">
+      <div class="car-show">
+        <div class="details">
+          <h3>Details</h3>
+          <div class="details-wrapper">
+            <div class="details-info">
+              <p class="details-title">Model</p>
+              <p><%= @car.model %></p>
+            </div>
+            <div class="details-info">
+              <p class="details-title">Year</p>
+              <p><%= @car.model_year %></p>
+            </div>
+          </div>
+          <div class="details-wrapper">
+            <div class="details-info">
+              <p class="details-title">Transmission</p>
+              <p><%= @car.transmission %></p>
+            </div>
+            <div class="details-info">
+              <p class="details-title">Fuel</p>
+              <p><%= @car.fuel %></p>
+            </div>
+          </div>
+          <div class="details-wrapper">
+            <div class="details-info">
+              <p class="details-title">Seat-capacity</p>
+              <p><%= @car.seat_capacity %></p>
+            </div>
+            <div class="details-info">
+              <p class="details-title">Price</p>
+              <p> £ <%= @car.rent_price %></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="features">
-      <h3>Features</h3>
-      <p><%= @car.features %></p>
+  </div>
+  <div class="feature-content">
+    <h3>Description</h3>
+    <div class="details-wrapper">
+      <p class="mt-2"><%= @car.description %></p>
     </div>
-    <div class="description">
-      <h3>Description</h3>
-    <p><%= @car.description %></p>
+    <h3>Features</h3>
+    <div class="details-wrapper">
+      <div class="feture-tag">
+        <% @car.features.split(',').each do |feature| %>
+          <span class="features"><%= feature.strip %></span>
+        <% end %>
+      </div>
     </div>
   </div>
 
   <%# car reservation form %>
+  <h2>Ready to ride?</h2>
   <div class="container booking-form" data-contoller= "flatpickr" data-flatpickr-disabled-dates-value="<%= @dates_booked.to_json %>">
     <%= simple_form_for [@car, @booking] do |f| %>
       <%= f.input :start_date, as: :string, placeholder: "Select start date", input_html: { data: { flatpickr_target: "startDate"}} %>
       <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, placeholder: "Select end date" }%>
-      <%= f.submit "Book now", class: "btn btn-primary" %>
+      <%= f.submit "Book now", class: "btn btn-primary btn-book" %>
     <% end %>
+
+  </div>
+</div>
+
 
   </span>
   <div class="container car-show">
@@ -110,8 +151,3 @@
   </div>
   
   
-<%# if car is booked for specific dates  %>
-
-  <%# then disable the flatpicker dates for same dates %>
-<%#end %>
-
